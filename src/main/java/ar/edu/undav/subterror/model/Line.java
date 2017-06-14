@@ -18,17 +18,18 @@ public class Line {
 
     private String name;
 
-    private String eventType;
+    private int eventType;
 
-    private String station;
+    private int station;
 
     public Line(){};
 
-    public Line(long id, String name, String eventType, String station){
+    public Line(long id, String name, int eventType, int station){
         this.id = id;
         this.name = name;
         this.eventType = eventType;
         this.station = station;
+
     }
 
     public long getId() {
@@ -47,19 +48,19 @@ public class Line {
         this.name = name;
     }
 
-    public String getEventType() {
+    public int getEventType() {
         return eventType;
     }
 
-    public void setEventType(String eventType) {
+    public void setEventType(int eventType) {
         this.eventType = eventType;
     }
 
-    public String getStation() {
+    public int getStation() {
         return station;
     }
 
-    public void setStation(String station) {
+    public void setStation(int station) {
         this.station = station;
     }
 }

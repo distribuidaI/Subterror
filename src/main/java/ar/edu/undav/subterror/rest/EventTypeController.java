@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 @RestController
-@RequestMapping(value = "/eventtype")
+@RequestMapping(value = "/eventType")
 public class EventTypeController {
 
     private EventTypeRepository eventTypeRepository;
@@ -28,4 +28,6 @@ public class EventTypeController {
     public List<EventType> getAll(){
         return this.eventTypeRepository.findAll();
     }
+
+
 }
