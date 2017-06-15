@@ -1,4 +1,4 @@
-package ar.edu.undav.subterror.repository;
+package ar.edu.undav.subterror.model;
 
 import ar.edu.undav.subterror.model.Station;
 import org.springframework.data.jpa.repository.JpaRepository;
