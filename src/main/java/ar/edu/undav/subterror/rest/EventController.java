@@ -3,8 +3,8 @@ package ar.edu.undav.subterror.rest;
 /**
  * Created by leo on 6/11/17.
  */
-import ar.edu.undav.subterror.model.Event;
-import ar.edu.undav.subterror.repository.EventRepository;
+import ar.edu.undav.subterror.domain.Event;
+import ar.edu.undav.subterror.domain.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,4 +27,6 @@ public class EventController
     public List<Event> getAll(){
         return this.eventRepository.findAll();
     }
+
+
 }
