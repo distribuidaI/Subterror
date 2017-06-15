@@ -1,30 +1,37 @@
 package ar.edu.undav.subterror.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by leo on 6/11/17.
  */
 
 @Entity
+@Table(name = "event")
 public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String date;
+    private Date date;
 
     private String hour;
 
     private String sense;
 
-    public Event(){};
+    @ManyToOne
+    @JoinColumn(name = "event_type")
+    private EventType eventType;
 
-    public Event(long id, String date, String hour, String sense){
+    @ManyToOne
+    @JoinColumn(name="station")
+    private Station station;
+
+    public Event() {}
+
+    public Event(long id, Date date, String hour, String sense) {
         this.id = id;
         this.date = date;
         this.hour = hour;
@@ -39,11 +46,11 @@ public class Event {
         this.id = id;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -61,5 +68,21 @@ public class Event {
 
     public void setSense(String sense) {
         this.sense = sense;
+    }
+
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
+
+    public Station getStation() {
+        return station;
+    }
+
+    public void setStation(Station station) {
+        this.station = station;
     }
 }
