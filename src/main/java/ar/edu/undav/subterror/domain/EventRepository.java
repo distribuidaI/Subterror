@@ -14,6 +14,7 @@ import java.util.Date;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event,Long>{
+
     public Event findByStation(Station station);
 
     public Event findByDate(Date date);
