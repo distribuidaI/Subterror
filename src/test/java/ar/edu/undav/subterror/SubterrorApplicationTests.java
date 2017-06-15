@@ -1,15 +1,14 @@
 package ar.edu.undav.subterror;
 
-import ar.edu.undav.subterror.model.Event;
-import ar.edu.undav.subterror.model.EventType;
-import ar.edu.undav.subterror.model.Station;
-import ar.edu.undav.subterror.repository.EventRepository;
-import ar.edu.undav.subterror.repository.EventTypeRepository;
-import ar.edu.undav.subterror.repository.StationRepository;
+import ar.edu.undav.subterror.domain.Event;
+import ar.edu.undav.subterror.domain.EventType;
+import ar.edu.undav.subterror.domain.Station;
+import ar.edu.undav.subterror.domain.EventRepository;
+import ar.edu.undav.subterror.domain.EventTypeRepository;
+import ar.edu.undav.subterror.domain.StationRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
