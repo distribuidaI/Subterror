@@ -1,6 +1,6 @@
-package ar.edu.undav.subterror.model;
+package ar.edu.undav.subterror.domain;
 
-import ar.edu.undav.subterror.model.Station;
+import ar.edu.undav.subterror.domain.Station;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

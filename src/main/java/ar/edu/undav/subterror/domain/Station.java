@@ -1,4 +1,4 @@
-package ar.edu.undav.subterror.model;
+package ar.edu.undav.subterror.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
