@@ -31,11 +31,12 @@ public class Event {
 
     public Event() {}
 
-    public Event(long id, Date date, String hour, String sense) {
-        this.id = id;
+    public Event(Date date, String hour, String sense, EventType eventType, Station station) {
         this.date = date;
         this.hour = hour;
         this.sense = sense;
+        this.eventType = eventType;
+        this.station = station;
     }
 
     public long getId() {

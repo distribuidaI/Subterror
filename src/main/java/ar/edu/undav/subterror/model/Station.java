@@ -22,8 +22,7 @@ public class Station {
 
     public Station(){};
 
-    public Station(long id, String line, String station){
-        this.id = id;
+    public Station(String line, String station){
         this.line = line;
         this.station = station;
     }

@@ -20,8 +20,7 @@ public class EventType {
 
     public EventType(){};
 
-    public EventType(long id, String description){
-        this.id = id;
+    public EventType(String description){
         this.description = description;
     }
 
