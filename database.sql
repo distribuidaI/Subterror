@@ -15,18 +15,12 @@ CREATE TABLE `station`(
 
 CREATE TABLE `event`(
   `id` int(255) AUTO_INCREMENT not null ,
+  `station` int(255) not null,
+  `event_type` int(255) not null,
   `date` DATE,
   `hour` TIME,
   `sense` varchar(255),
-  CONSTRAINT PRIMARY KEY(`id`)
-)ENGINE=InnoDb;
-
-CREATE TABLE `line`(
-  `id` int(255) AUTO_INCREMENT not null,
-  `name` varchar(255),
-  `event_type` int(255) not null,
-  `station` int(255) not null,
   CONSTRAINT PRIMARY KEY(`id`),
-  CONSTRAINT FOREIGN KEY(`event_type`) REFERENCES event_type(`id`),
-  CONSTRAINT FOREIGN KEY(`station`) REFERENCES station(`id`)
+  CONSTRAINT FOREIGN KEY(`station`) REFERENCES station(`id`),
+  CONSTRAINT FOREIGN KEY(`event_type`) REFERENCES event_type(`id`)
 )ENGINE=InnoDb;
