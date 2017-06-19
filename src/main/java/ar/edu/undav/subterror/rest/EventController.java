@@ -6,7 +6,11 @@ package ar.edu.undav.subterror.rest;
 import ar.edu.undav.subterror.domain.Event;
 import ar.edu.undav.subterror.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
@@ -31,9 +35,12 @@ public class EventController
         return this.eventService.getEvent(id);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public void addEvent(@RequestBody Event event){
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public ResponseEntity<Void> createEvent(@RequestBody Event event, UriComponentsBuilder uriComponentsBuilder){
         eventService.addEvent(event);
-    }
 
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(uriComponentsBuilder.path("/add/{id}").buildAndExpand(event.getId()).toUri());
+        return new ResponseEntity<Void>(headers,HttpStatus.CREATED);
+    }
 }
