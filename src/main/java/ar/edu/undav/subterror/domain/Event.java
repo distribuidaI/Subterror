@@ -17,8 +17,6 @@ public class Event {
 
     private Date date;
 
-    private String hour;
-
     private String sense;
 
     @ManyToOne
@@ -31,9 +29,8 @@ public class Event {
 
     public Event() {}
 
-    public Event(Date date, String hour, String sense, EventType eventType, Station station) {
-        this.date = date;
-        this.hour = hour;
+    public Event(String sense, EventType eventType, Station station) {
+        this.date = new Date();
         this.sense = sense;
         this.eventType = eventType;
         this.station = station;
@@ -53,14 +50,6 @@ public class Event {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
     }
 
     public String getSense() {
