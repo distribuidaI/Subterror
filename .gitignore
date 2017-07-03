@@ -36,7 +36,7 @@ nbdist/
 /out-tsc
 
 # dependencies
-/scr/main/frontend/node_modules
+src/main/frontend/node_modules
 
 # IDEs and editors
 .c9/
@@ -45,20 +45,20 @@ nbdist/
 *.sublime-workspace
 
 # misc
-/scr/main/frontend/.sass-cache
-/scr/main/frontend/connect.lock
-/scr/main/frontend/coverage
-/scr/main/frontend/libpeerconnection.log
-/scr/main/frontendnpm-debug.log
-/scr/main/frontendtestem.log
-/scr/main/frontend/typings
+src/main/frontend/.sass-cache
+src/main/frontend/connect.lock
+src/main/frontend/coverage
+src/main/frontend/libpeerconnection.log
+src/main/frontend/npm-debug.log
+src/main/frontend/testem.log
+src/main/frontend/typings
 
 # e2e
-/scr/main/frontend/e2e/*.js
-/scr/main/frontend/e2e/*.map
+src/main/frontend/e2e/*.js
+src/main/frontend/e2e/*.map
 
 # System Files
-/scr/main/frontend/.DS_Store
-/scr/main/frontend/Thumbs.db
+src/main/frontend/.DS_Store
+src/main/frontend/Thumbs.db
 .DS_Store
 Thumbs.db
