@@ -22,7 +22,7 @@ public class StationController {
         this.stationService = stationService;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Station> getAll(){
         return this.stationService.getAllStation();
     }

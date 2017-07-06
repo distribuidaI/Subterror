@@ -21,8 +21,8 @@ public class EventTypeService {
         return eventTypeRepository.findAll();
     }
 
-    public EventType getEventType(Long id){
-        return eventTypeRepository.findOne(id);
+    public EventType getEventType(String description){
+        return eventTypeRepository.findByDescription(description);
     }
 
     public void addEventType(EventType eventType){

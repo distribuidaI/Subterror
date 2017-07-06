@@ -26,14 +26,14 @@ public class EventTypeController {
         this.eventTypeService = eventTypeService;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<EventType> getAllEventType(){
         return this.eventTypeService.getAllEventType();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public EventType getEventType(@PathVariable Long id){
-        return this.eventTypeService.getEventType(id);
+    public EventType getEventType(@PathVariable String description){
+        return this.eventTypeService.getEventType(description);
     }
 
 }
