@@ -15,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,10 +25,14 @@ import java.util.logging.Logger;
 public class EventController
 {
     private EventService eventService;
+    private StationService stationService;
+    private EventTypeService eventTypeService;
 
     @Autowired
-    public EventController(EventService eventService){
+    public EventController(EventService eventService,StationService stationService, EventTypeService eventTypeService){
         this.eventService = eventService;
+        this.stationService = stationService;
+        this.eventTypeService = eventTypeService;
     }
 
     @RequestMapping(value = "",method = RequestMethod.GET)
@@ -40,23 +46,17 @@ public class EventController
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST)
-    public ResponseEntity<Event> createEvent(HttpServletRequest request,
-                                         @RequestParam(value = "sense") String sense,
-                                         @RequestParam(value = "eventType") String eventType,
-                                         @RequestParam(value = "station") String station){
-        StationService stationService = new StationService();
-        EventTypeService eventTypeService = new EventTypeService();
-        EventService eventService = new EventService();
-
+    @ResponseBody
+    public ResponseEntity<Event> createEvent(@RequestParam(value = "sense") String sense,
+                                             @RequestParam(value = "eventType") String eventType,
+                                             @RequestParam(value = "station") String station){
         Event event = new Event();
         Station _station;
         EventType _eventType;
 
         // Entras al servicio y buscas los respectivos objetos
-
-        _station = stationService.getStation(request.getParameter(station));
-        _eventType = eventTypeService.getEventType(request.getParameter(eventType));
-
+        _eventType = eventTypeService.getEventType(eventType);
+        _station = stationService.getStation(station);
 
         // Creamos el objeto de tipo evento
 
@@ -67,6 +67,6 @@ public class EventController
         // Guardamos y persistimos en la bd
         eventService.addEvent(event);
 
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return new ResponseEntity<Event>(event,HttpStatus.CREATED);
     }
 }

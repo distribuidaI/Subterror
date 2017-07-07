@@ -1,5 +1,7 @@
 package ar.edu.undav.subterror.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,7 +17,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private Date date;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private Date date = new Date();
 
     private String sense;
 
@@ -30,7 +33,6 @@ public class Event {
     public Event() {}
 
     public Event(String sense, EventType eventType, Station station) {
-        this.date = new Date();
         this.sense = sense;
         this.eventType = eventType;
         this.station = station;
