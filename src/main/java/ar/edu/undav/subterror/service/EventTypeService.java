@@ -5,6 +5,7 @@ import ar.edu.undav.subterror.domain.EventTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -23,6 +24,10 @@ public class EventTypeService {
 
     public EventType getEventType(String description){
         return eventTypeRepository.findByDescription(description);
+    }
+
+    public EventType getEventTypeById(Long id){
+        return eventTypeRepository.findOne(id);
     }
 
     public void addEventType(EventType eventType){

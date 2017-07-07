@@ -5,6 +5,7 @@ import ar.edu.undav.subterror.domain.StationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,6 +23,10 @@ public class StationService {
 
     public Station getStation(String station){
         return stationRepository.findByStation(station);
+    }
+
+    public Station getStationById(Long id){
+        return stationRepository.findOne(id);
     }
 
     public void addStation(Station station){
