@@ -32,8 +32,8 @@ public class EventTypeController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public EventType getEventType(@PathVariable String description){
-        return this.eventTypeService.getEventType(description);
+    public EventType getEventType(@PathVariable Long id){
+        return this.eventTypeService.getEventTypeById(id);
     }
 
 }
