@@ -50,7 +50,7 @@ public class EventController
     public ResponseEntity<Event> createEvent(@RequestParam(value = "sense") String sense,
                                              @RequestParam(value = "eventType") String eventType,
                                              @RequestParam(value = "station") String station){
-        Event event = new Event();
+
         Station _station;
         EventType _eventType;
 
@@ -60,9 +60,7 @@ public class EventController
 
         // Creamos el objeto de tipo evento
 
-        event.setEventType(_eventType);
-        event.setSense(sense);
-        event.setStation(_station);
+        Event event = new Event(sense,_eventType,_station);
 
         // Guardamos y persistimos en la bd
         eventService.addEvent(event);

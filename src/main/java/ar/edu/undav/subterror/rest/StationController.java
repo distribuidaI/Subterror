@@ -13,7 +13,7 @@ import java.util.List;
  * Created by leo on 6/14/17.
  */
 @RestController
-@RequestMapping(value = "/stations")
+@RequestMapping(value = "/station")
 public class StationController {
     private StationService stationService;
 
