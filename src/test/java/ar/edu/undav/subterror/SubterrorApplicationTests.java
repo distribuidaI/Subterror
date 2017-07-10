@@ -65,8 +65,6 @@ public class SubterrorApplicationTests {
 	@Test
 	@Transactional
 	public void testEvent(){
-		Date fecha = new Date();
-		String hora = "00:00:00";
 		String sense = "Sentido a sarasa";
 		EventType eventType = new EventType("Demora");
 		entityManager.persist(eventType);
@@ -76,7 +74,7 @@ public class SubterrorApplicationTests {
 		entityManager.persist(estacion);
 		entityManager.flush();
 
-		Event event = new Event(fecha,hora,sense,eventType,estacion);
+		Event event = new Event(sense,eventType,estacion);
 
 		entityManager.persist(event);
 		entityManager.flush();
