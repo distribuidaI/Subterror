@@ -2,9 +2,11 @@ package ar.edu.undav.subterror.service;
 
 import ar.edu.undav.subterror.domain.Event;
 import ar.edu.undav.subterror.domain.EventRepository;
+import ar.edu.undav.subterror.domain.EventType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -22,6 +24,10 @@ public class EventService {
 
     public Event getEvent(Long id){
         return eventRepository.findOne(id);
+    }
+
+    public Collection<Event> getEventByEventTypeByDescription(String description){
+        return eventRepository.findByEventType_Description(description);
     }
 
     public void addEvent(Event event){

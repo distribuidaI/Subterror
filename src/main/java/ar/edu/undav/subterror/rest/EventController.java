@@ -14,11 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.logging.Logger;
+import java.util.*;
 
 @RestController
 @RequestMapping(value = "/event")
@@ -40,9 +36,11 @@ public class EventController
         return this.eventService.getAllEvent();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Event getEvent(@PathVariable Long id){
-        return this.eventService.getEvent(id);
+    @RequestMapping(value = "/type", method = RequestMethod.GET)
+    public ResponseEntity<Collection<Event>> getEventByEventType(@RequestParam(value = "eventType") String eventType) {
+        Collection<Event> events = eventService.getEventByEventTypeByDescription(eventType);
+
+        return ResponseEntity.ok(events);
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST)
