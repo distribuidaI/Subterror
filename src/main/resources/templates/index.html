@@ -5,36 +5,40 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="/js/main.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
         <link rel="stylesheet" href="/css/bootstrap.min.css"></link>
         <link rel="stylesheet" href="/css/bootstrap-theme.min.css"></link>
         <title>Subterror</title>
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
     </head>
     <body>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Undav - Subterror</a>
+        <div class="row">
+            <nav class="navbar navbar-default col-md-6 col-md-offset-3">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Undav - Subterror</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="mapa.html">Recorrido</a></li>
+                        <li><a href="about.html">Acerca de</a></li>
+                    </ul>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Ultimos 5 eventos</a></li>
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Acerce de</a></li>
-                </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="">Bienvenidos a Subterror</h1>
+            <div class="col-md-6 col-md-offset-3">
+                <h1>Bienvenidos a Subterror</h1>
             </div>
         </div>
-        <div class="row container">
-            <div class="col-md-12">
-                <h2>Proximamente grafico de inconvenientes...</h2>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="subterror_chart" style="width: 900px; height: 500px"></div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Ingresa tu inconveniente:</h2>
                 <form id="subterrorForm">
                     <label>Destino a:</label>
                     <input class="form-control" type="text" name="sense" placeholder="Ej: Destino a Retiro"></input>
