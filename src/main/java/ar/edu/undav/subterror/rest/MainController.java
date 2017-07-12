@@ -12,4 +12,14 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping(path="/mapa", method= RequestMethod.GET)
+    public String goMapa(){
+        return "mapa";
+    }
+
+    @RequestMapping(path="/about", method= RequestMethod.GET)
+    public String goAbout(){
+        return "about";
+    }
+
 }
